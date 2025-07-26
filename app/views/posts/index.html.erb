@@ -3,8 +3,6 @@
 <%= link_to "New Post", new_post_path, class: "btn btn-success mb-3" %>
 
 <% @posts.each do |post| %>
-  <% debugger %>
-
   <div class="card mb-3">
     <div class="card-body">
       <h5 class="card-title"><%= link_to post.title, post_path(post) %></h5>
