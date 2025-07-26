@@ -16,12 +16,17 @@ class User
   ## Rememberable
   field :remember_created_at, type: Time
 
+  with_options dependent: :destroy do
+    has_many :posts
+    has_many :comments
+  end
 
 
   ## Trackable
   # field :sign_in_count,      type: Integer, default: 0
   # field :current_sign_in_at, type: Time
   # field :last_sign_in_at,    type: Time
+
   # field :current_sign_in_ip, type: String
   # field :last_sign_in_ip,    type: String
 
