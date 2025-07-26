@@ -6,4 +6,7 @@ class Post
   field :published_at, type: Time
 
   validates :title, presence: true
+
+
+  has_many :comments
 end
