@@ -10,7 +10,6 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -26,7 +25,7 @@
       <nav class="mb-4 border-bottom pb-2">
         <% if user_signed_in? %>
           👋 Hello, <strong><%= current_user.email %></strong> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-sm btn-outline-danger ms-2" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { turbo: false }, class: "btn btn-sm btn-outline-danger ms-2" %>
         <% else %>
           <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-sm btn-outline-primary me-2" %>
           <%= link_to "Login", new_user_session_path, class: "btn btn-sm btn-outline-secondary" %>
@@ -36,7 +35,7 @@
 
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-zbJrH4bWbLbQZ6hFTU6KeN1jZ3pK8uW32dx7XNU5fFZc7d8Rg1oD3idQ5RJt60t4"
+        
         crossorigin="anonymous"
       ></script>
   </body>
